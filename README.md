@@ -6,7 +6,7 @@
 
 #### Screenshot:
 
-![](/home/gabo539/snap/marktext/9/.config/marktext/images/2024-10-16-14-30-52-image.png)
+SEE REPORT PDF FILE!
 
 #### ChatGPT link: https://chatgpt.com/share/670fa464-e4e0-800a-8566-85e8c8e7f726
 
@@ -18,7 +18,7 @@ I followed the exact instructions of the Task. At first I got an explanation by 
 
 #### Screenshot:
 
-![](/home/gabo539/snap/marktext/9/.config/marktext/images/2024-10-16-15-08-07-image.png)
+SEE REPORT PDF FILE!
 
 #### Task reports:
 
@@ -46,11 +46,7 @@ function getModelViewMatrix() {
 
 At first i create the the transition matrix according to the metric given. Later on I do the same with the scaling. I scale by the z-axis with the value 1, as this keeps the skaling neutral. Then I rotate seperately for around each axis. I saw that the input has to be in radian, so I looked up the values for the given degrees on the Internet.
 
-
-
 In the end I multiplied the matrices according to the given order, therefore I performed a right-sided multiplication of the scaleMatrix on the translations matrix and afterwards right-sided multiplications for each rotation matrix. In the End I return the result of the multiplication.
-
-
 
 The result is different from the result ChatGPT generated in Task 1. Since I checked my calculation in details, I assume that my calculation is right. ChatGPT may have explained me the task correctly, but it failed to perform the calculation itself. This is tipical behaviour for a LLM.
 
@@ -58,20 +54,14 @@ The result is different from the result ChatGPT generated in Task 1. Since I che
 
 #### Screenshots:
 
-![Screenshot from 2024-10-16 15-28-48.png](/home/gabo539/Pictures/Screenshots/Screenshot%20from%202024-10-16%2015-28-48.png)
+SEE REPORT PDF FILE!
 
-![Screenshot from 2024-10-16 15-28-51.png](/home/gabo539/Pictures/Screenshots/Screenshot%20from%202024-10-16%2015-28-51.png)
 
-![Screenshot from 2024-10-16 15-28-53.png](/home/gabo539/Pictures/Screenshots/Screenshot%20from%202024-10-16%2015-28-53.png)
+
+
 
 #### ChatGPT link: https://chatgpt.com/share/670fa464-e4e0-800a-8566-85e8c8e7f726
 
 #### Report:
 
 I have completed the task with ChatGPT according to the instructions. I copied the provided code (s. project files) and after revising the code and seeing the animation on my webbrowser I came to the conclusion that the provided code is correct.
-
-
-
-
-
-
