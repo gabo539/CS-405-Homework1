@@ -6,7 +6,7 @@
 
 #### Screenshot:
 
-SEE REPORT PDF FILE!
+SEE REPORT FILE!
 
 #### ChatGPT link: https://chatgpt.com/share/670fa464-e4e0-800a-8566-85e8c8e7f726
 
@@ -18,7 +18,7 @@ I followed the exact instructions of the Task. At first I got an explanation by 
 
 #### Screenshot:
 
-SEE REPORT PDF FILE!
+SEE REPORT FILE!
 
 #### Task reports:
 
@@ -38,15 +38,16 @@ function getModelViewMatrix() {
     const rotationMatrixY = createRotationMatrix_Y(0.785398163);    // Rotation by 45 degrees in y-axis
     const rotationMatrixZ = createRotationMatrix_Z(1.04719755);     // Rotation by 60 degrees in z-axis
 
-    const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(translationMatrix, scaleMatrix), rotationMatrixX), rotationMatrixY), rotationMatrixZ);
+    //const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(translationMatrix, scaleMatrix), rotationMatrixX), rotationMatrixY), rotationMatrixZ); // given order
+    const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(scaleMatrix,rotationMatrixX), rotationMatrixY), rotationMatrixZ), translationMatrix); //my order
 
     return modelViewMatrix;
 }
 ```
 
-At first i create the the transition matrix according to the metric given. Later on I do the same with the scaling. I scale by the z-axis with the value 1, as this keeps the skaling neutral. Then I rotate seperately for around each axis. I saw that the input has to be in radian, so I looked up the values for the given degrees on the Internet.
+At first i create the transition matrix according to the metric given. Later on I do the same with the scaling. I scale by the z-axis with the value 1, as this keeps the skaling neutral. Then I rotate seperately for around each axis. I saw that the input has to be in radian, so I looked up the values for the given degrees on the Internet.
 
-In the end I multiplied the matrices according to the given order, therefore I performed a right-sided multiplication of the scaleMatrix on the translations matrix and afterwards right-sided multiplications for each rotation matrix. In the End I return the result of the multiplication.
+In the end I multiplied the matrices according to a order different to the given one, therefore I performed a right-sided multiplication of each rotation matrix on the scale matrix and afterwards a I applied the translationMatrix. The reason for that is that I have found online sources ([Why Transformation Order Is Significant - Windows Forms .NET Framework | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/why-transformation-order-is-significant?view=netframeworkdesktop-4.8)[Why Transformation Order Is Significant - Windows Forms .NET Framework | Microsoft Learn](https://learn.microsoft.com/en-us/dotnet/desktop/winforms/advanced/why-transformation-order-is-significant?view=netframeworkdesktop-4.8)) which state that the order here matters, since rotations and scalations are connected to the origin. Therefore a translation should be performed last. In the End I return the result of the multiplication. But the outcommented matrix multiplication which follows the given order returns a pretty similiar result.
 
 The result is different from the result ChatGPT generated in Task 1. Since I checked my calculation in details, I assume that my calculation is right. ChatGPT may have explained me the task correctly, but it failed to perform the calculation itself. This is tipical behaviour for a LLM.
 
@@ -54,11 +55,7 @@ The result is different from the result ChatGPT generated in Task 1. Since I che
 
 #### Screenshots:
 
-SEE REPORT PDF FILE!
-
-
-
-
+SEE REPORT FILE!
 
 #### ChatGPT link: https://chatgpt.com/share/670fa464-e4e0-800a-8566-85e8c8e7f726
 

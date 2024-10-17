@@ -169,7 +169,8 @@ function getModelViewMatrix() {
     const rotationMatrixY = createRotationMatrix_Y(0.785398163);    // Rotation by 45 degrees in y-axis
     const rotationMatrixZ = createRotationMatrix_Z(1.04719755);     // Rotation by 60 degrees in z-axis
 
-    const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(translationMatrix, scaleMatrix), rotationMatrixX), rotationMatrixY), rotationMatrixZ);
+    //const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(translationMatrix, scaleMatrix), rotationMatrixX), rotationMatrixY), rotationMatrixZ); //given order
+    const modelViewMatrix = multiplyMatrices(multiplyMatrices(multiplyMatrices(multiplyMatrices(scaleMatrix,rotationMatrixX), rotationMatrixY), rotationMatrixZ), translationMatrix); //my order
 
     return modelViewMatrix;
 }
